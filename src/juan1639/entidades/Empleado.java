@@ -35,6 +35,7 @@ public class Empleado extends Persona {
 
 	@Override
 	public String toString() {
-		return "Empleado [nss=" + nss + ", sueldoMensual=" + sueldoMensual + "]";
+		return "Empleado [nss=" + nss + ", sueldoMensual=" + sueldoMensual + "]"
+				+ ", toString()=" + super.toString() + "]";
 	}	
 }
