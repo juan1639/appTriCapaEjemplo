@@ -82,9 +82,13 @@ public class PresentacionPruebas {
 		tabla.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
 				int fila = tabla.rowAtPoint(e.getPoint());
+				
 				if (fila > -1) {
+					
 					id = (Long) modelo.getValueAt(fila, 0);
+					System.out.println(id);
 
 					Empleado empleado = dao.obtenerPorId(id);
 
@@ -271,7 +275,9 @@ public class PresentacionPruebas {
 		btnBorrar.setBackground(Color.RED);
 		btnBorrar.setHorizontalAlignment(SwingConstants.LEFT);
 		panel_1.add(btnBorrar);
+		
 		btnGuardar.addActionListener(new ActionListener() {
+			
 			public void actionPerformed(ActionEvent e) {
 				var empleado = new Empleado(null, tfNombre.getText(), tfApellidos.getText(), tfNif.getText(),
 						tfTelefono.getText(), tfSeguridadSocial.getText(), new BigDecimal(tfSueldoMensual.getText()));
@@ -292,10 +298,9 @@ public class PresentacionPruebas {
 					dao.insertar(empleado);
 				}
 
-				// empleadoAFila(empleado);
+				//empleadoAFila(empleado);
 				cargarEmpleados();
 			}
 		});
-
 	}
 }

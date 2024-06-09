@@ -21,6 +21,7 @@ public class DaoEmpleadoTreeMap implements DaoEmpleado {
 	@Override
 	public Empleado insertar(Empleado empleado) {
 		Long id = empleadosTreeMap.size() > 0 ? empleadosTreeMap.lastKey() + 1L : 1L;
+		empleado.setId(id);
 		empleadosTreeMap.put(id, empleado);
 		
 		return empleado;

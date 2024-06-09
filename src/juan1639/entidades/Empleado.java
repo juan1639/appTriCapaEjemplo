@@ -32,7 +32,7 @@ public class Empleado extends Persona {
 	public void setSueldoMensual(BigDecimal sueldoMensual) {
 		this.sueldoMensual = sueldoMensual;
 	}
-
+	
 	@Override
 	public String toString() {
 		return "Empleado [nss=" + nss + ", sueldoMensual=" + sueldoMensual + "]"

@@ -12,6 +12,10 @@ public class AccesoDatosPruebas {
 		
 		  DaoEmpleado dao = new DaoEmpleadoTreeMap();
 		  
+		  for (var e : dao.obtenerTodos()) {
+			  System.out.println("Antes: " + e);
+		  }
+		  
 		  dao.insertar(new Empleado(null, "Javier", "Lete", "12345678A", "654321654",
 		  "1234123412341234", new BigDecimal(23456)));
 		  
@@ -21,9 +25,11 @@ public class AccesoDatosPruebas {
 		  dao.insertar(new Empleado(null, "La", "Hormiga", "37654321W", "650125450",
 		  "4821432043214321", new BigDecimal(10345)));
 		  
-		  for (var e : dao.obtenerTodos()) { System.out.println("Después: " + e); }
+		  for (var e : dao.obtenerTodos()) {
+			  System.out.println("Después: " + e);
+		  }
 		  
-		  System.out.println("Id: " + dao.obtenerPorId(2L));
+		  System.out.println("Id: " + dao.obtenerPorId(3L));
 		  
 		  System.out.println("NIF: " + dao.obtenerPorNif("12345678A"));
 		 
